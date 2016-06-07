@@ -95,19 +95,19 @@ canvas.onmousemove = function(e){
 
 //手指触碰事件调用封装好的函数
 canvas.addEventListener('touchstart',function(e){
-    e.preventDefault()  // 阻止默认响应
-    touch = e.touches[0]
+    e.preventDefault();  // 阻止默认响应
+    touch = e.touches[0];
     beginStroke( {x: touch.pageX , y: touch.pageY} )
 });
 canvas.addEventListener('touchmove',function(e){
-    e.preventDefault()
+    e.preventDefault();
     if(isMouseDown){
-        touch = e.touches[0]
+        touch = e.touches[0];
         moveStroke({x: touch.pageX , y: touch.pageY})
     }
 });
 canvas.addEventListener('touchend',function(e){
-    e.preventDefault()
+    e.preventDefault();
     endStroke()
 });
 
@@ -150,34 +150,34 @@ function windowToCanvas(x,y){
 }
 
 function drawGrid(){
-    context.save()
-    context.strokeStyle = "rgb(230,11,9)"
+    context.save();
+    context.strokeStyle = "rgb(230,11,9)";
 
-    context.beginPath()
-    context.moveTo(3,3)
-    context.lineTo(canvasWidth - 3 , 3)
-    context.lineTo(canvasWidth - 3 , canvasHeight - 3)
-    context.lineTo(3 , canvasHeight - 3)
-    context.closePath()
+    context.beginPath();
+    context.moveTo(3,3);
+    context.lineTo(canvasWidth - 3 , 3);
+    context.lineTo(canvasWidth - 3 , canvasHeight - 3);
+    context.lineTo(3 , canvasHeight - 3);
+    context.closePath();
 
-    context.lineWidth = 6
-    context.stroke()
+    context.lineWidth = 6;
+    context.stroke();
 
-    context.beginPath()
-    context.moveTo(0, 0)
-    context.lineTo(canvasWidth,canvasHeight)
+    context.beginPath();
+    context.moveTo(0, 0);
+    context.lineTo(canvasWidth,canvasHeight);
 
-    context.moveTo(canvasWidth,0)
-    context.lineTo(0,canvasHeight)
+    context.moveTo(canvasWidth,0);
+    context.lineTo(0,canvasHeight);
 
-    context.moveTo(canvasWidth/2,0)
-    context.lineTo(canvasHeight/2,canvasHeight)
+    context.moveTo(canvasWidth/2,0);
+    context.lineTo(canvasHeight/2,canvasHeight);
 
-    context.moveTo(0,canvasHeight/2)
-    context.lineTo(canvasWidth,canvasHeight/2)
+    context.moveTo(0,canvasHeight/2);
+    context.lineTo(canvasWidth,canvasHeight/2);
 
-    context.lineWidth = 1
-    context.stroke()
+    context.lineWidth = 1;
+    context.stroke();
 
-    context.restore()
+    context.restore();
 }
